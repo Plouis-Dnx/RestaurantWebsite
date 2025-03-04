@@ -1,0 +1,12 @@
+body{
+    min-height: 100vh;
+    background-color: rgb(15, 20, 38);
+}
+
+nav{
+    background-color: rgb(255, 128, 15);
+}
+
+a {
+    color: white;
+}
