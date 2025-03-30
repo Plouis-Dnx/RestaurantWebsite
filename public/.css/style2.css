@@ -1,0 +1,86 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #17005E;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* --- HEADER --- */
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background-color: #FF6341;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    margin: 15px;
+    font-size: 16px;
+}
+
+a:hover {
+    color: white;
+}
+
+/* --- MENU DU JOUR --- */
+.container {
+    background-color: orangered;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.prix {
+    font-size: 20px;
+    color: #17005E;
+    margin-bottom: 30px;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #FFFFFF; /* Fond clair pour les cartes */
+}
+
+.card-body {
+    color: #17005E; /* Couleur du texte (couleur foncée pour le contraste) */
+}
+
+.card-title {
+    font-size: 22px;
+    color: #17005E; /* Titre en couleur foncée */
+}
+
+.card-text {
+    font-size: 16px;
+    color: #333; /* Texte principal dans une couleur foncée */
+}
+
+/*--- menu --- */
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-item .card-text {
+    flex: 1;
+}
+
+.menu-item .prix {
+    font-weight: bold;
+    color: #17005E;
+    margin-bottom: 0;
+    white-space: nowrap; /* Empêche le prix de passer à la ligne */
+}
