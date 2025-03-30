@@ -84,3 +84,11 @@ a:hover {
     margin-bottom: 0;
     white-space: nowrap; /* Empêche le prix de passer à la ligne */
 }
+
+/* Réduction de la taille des images du carrousel */
+.carousel-item img {
+    max-width: 50%;  /* Définit la largeur maximale des images à 50% de la largeur du conteneur */
+    margin: 0 auto;  /* Centre les images horizontalement */
+    height: auto;    /* Maintient le ratio d'aspect */
+}
+
