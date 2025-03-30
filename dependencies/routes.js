@@ -5,6 +5,12 @@ const router = express.Router();
 const db = require('./db');
 
 // GET
+router.get('/test', (req, res) => {
+    res.send('Hello World');
+});
+
 // POST
 // PUT
 // DELETE
+
+module.exports = router;
