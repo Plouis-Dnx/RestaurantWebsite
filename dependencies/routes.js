@@ -8,3 +8,5 @@ const db = require('./db');
 // POST
 // PUT
 // DELETE
+
+module.exports = router;
