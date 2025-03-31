@@ -10,9 +10,11 @@
 </head>
 <body class="d-flex flex-column min-vh-100">
     <!-- HEADER -->
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg bg-orange">
         <div class="container-fluid">
-            <a class="navbar-brand disabled" href="#">Le Festin du Chef </a>
+            <a class="navbar-brand disabled" href="./accueil.html"> 
+                <img src="./logo2.png" alt="logo" style="height:75px; width: 75px; border-radius: 50%;">
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -35,13 +37,76 @@
     <!-- MAIN -->
     <div class="container d-flex flex-column" style="flex: 1;">
         <div class="d-flex justify-content-center">
-            BONJOUR
+            <p class="display-2"><i>Bienvenue dans notre Restaurant !</i></p>
         </div>
-        <div id="map" style="height: 500px; width: 100%;"></div>
+
+        <!-- Map -->
+        <div id="map" style="height: 500px; width: 100%;" class="my-3"></div>
+
+        <!-- Caroussel -->
+        <div class="d-flex justify-content-center align-items-center mb-3">
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <!-- Card -->
+                        <div class="d-flex">
+                            <div class="card mx-3" style="width: 18rem;">
+                                <img src="./restaurant_ambiance.jpg" class="card-img-top" alt="intérieur">
+                                <div class="card-body">
+                                    <h5 class="card-title"> Ambiance Relax </h5>
+                                    <p class="card-text">Si vous souhaitez déjeuner ou diner au calme, notre restaurant est fait pour vous !</p>
+                                </div>
+                            </div>
+                            <div class="card mx-3" style="width: 18rem;">
+                                <img src="./restaurant-terrasse.jpg" class="card-img-top" alt="terrasse">
+                                <div class="card-body">
+                                    <h5 class="card-title"> Terrasse </h5>
+                                    <p class="card-text">Lorsqu'il fait beau, vous pouvez manger dehors !</p>
+                                </div>
+                            </div>
+                            <div class="card mx-3" style="width: 18rem;">
+                                <img src="./restaurant-équipe.jpg" class="card-img-top" alt="équipe">
+                                <div class="card-body">
+                                    <h5 class="card-title"> Notre équipe </h5>
+                                    <p class="card-text">Une équipe rapide, chaleureuse et accueillante !</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <!-- Card -->
+                        <div class="d-flex">
+                            <div class="card mx-3" style="width: 18rem;">
+                                <img src="./plat1.jpg" class="card-img-top" alt="plat">
+                                <div class="card-body">
+                                    <h5 class="card-title"> Nos plats </h5>
+                                    <p class="card-text"> Notre boeuf bourguignon servi avec des pommes de terre vapeur. </p>
+                                    <a href="./menu.html/#boeuf" class="btn btn-link btn-sm"> Voir dans les menus </a>
+                                </div>
+                            </div>
+                            <div class="card mx-3" style="width: 18rem;">
+                                <img src="./boisson1.jpeg" class="card-img-top" alt="boisson">
+                                <div class="card-body">
+                                    <h5 class="card-title"> Nos boissons </h5>
+                                    <p class="card-text"> Notre cocktail <i>Tequila Sunrise</i> à base de françoise, ananas et vodka est idéal pour se rafraichir !</p>
+                                </div>
+                            </div>
+                            <div class="card mx-3" style="width: 18rem;">
+                                <img src="./dessert1.jpg" class="card-img-top" alt="dessert">
+                                <div class="card-body">
+                                    <h5 class="card-title"> Nos desserts </h5>
+                                    <p class="card-text"> Une tarte tatin aux pommes faite entièrement maison !</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- FOOTER -->
-    <footer class="p-3">
+    <footer class="p-3 bg-orange">
         <div class="d-flex justify-content-between">
             <div class="d-flex justify-content-center align-items-center">
                 <p class="fs-4">lefestinduchef.fr</p>
@@ -52,7 +117,7 @@
         </div>
     </footer>
 
-    <script type="module" src="./maps.js"></script>
-
+    <script src="./maps.js"></script>
+    <script src="./bootstrap.bundle.min.js"></script>
 </body>
 </html>
