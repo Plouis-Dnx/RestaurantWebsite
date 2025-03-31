@@ -23,41 +23,31 @@
     <div class="container mt-5"> <!--Utilise Bootstrap pour un espacement mt-5 = margin-top: 5-->
         <div class="text-center mb-4"> <!--Centre le texte et ajoute un espacement en bas mb-4 = margin-bottom: 4-->
             <h1>Galerie</h1>
-            <p>Découvrez quelques-uns de nos plats et de notre ambiance.</p>
+            <p>Découvrez quelques-uns de nos plats et notre ambiance.</p>
         </div>
 
-        <!-- Carrousel Bootstrap -->
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
-                <!-- Image 1 -->
-                <div class="carousel-item active">
-                    <img src="./soupe_a_l_oignon.jpg" class="d-block w-100" alt="Soupe à l'oignon">
-                </div>
-                <!-- Image 2 -->
-                <div class="carousel-item">
-                    <img src="./boeuf_bourguignon.jpg" class="d-block w-100" alt="Bœuf bourguignon">
-                </div>
-                <!-- Image 3 -->
-                <div class="carousel-item">
-                    <img src="./tarte_tatin.jpg" class="d-block w-100" alt="Tarte Tatin">
-                </div>
-                <!-- Ajoute d'autres images ici si nécessaire -->
+              <div class="carousel-item active">
+                <img class="d-block w-100" src="./soupe_a_l_oignon.jpg" alt="Soupe à l'oignon">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="./boeuf_bourguignon.jpg" alt="Boeuf Bourguignon">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="./tarte_tatin.jpg" alt="Tarte Tatin">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="./mojito.jpg" alt="Mojito">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="./tequila_sunrise.jpg" alt="Tequila Sunrise">
+              </div>
             </div>
-            <!-- Contrôles (Flèches de navigation) -->
-            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Précédent</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Suivant</span>
-            </a>
-        </div>
+          </div>
+       </div>
     </div>
-
     <!-- Lien vers Bootstrap JS (optionnel pour le bon fonctionnement de certains composants de Bootstrap) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="./bootstrap.bundle.min.js"></script>
 </body>
 </html>
