@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../.css/bootstrap.min.css">
-    <link rel="stylesheet" href="../.css/style.css">
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxI9cIaCL2KsFHE3jusEsd_vPJMr0HZNs&callback=initMap&loading=async"></script>
+    <link rel="stylesheet" href="./bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css">
     <title>Accueil</title>
 </head>
 <body class="d-flex flex-column min-vh-100">
@@ -36,6 +37,7 @@
         <div class="d-flex justify-content-center">
             BONJOUR
         </div>
+        <div id="map" style="height: 500px; width: 100%;"></div>
     </div>
 
     <!-- FOOTER -->
@@ -49,6 +51,8 @@
             </div>
         </div>
     </footer>
+
+    <script type="module" src="./maps.js"></script>
 
 </body>
 </html>
