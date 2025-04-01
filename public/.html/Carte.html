@@ -5,18 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Le Festin du Chef - Carte</title>
     <!-- Lien vers Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./style2.css">
+    <link rel="stylesheet" href="./bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <div class="header">
-        <nav>
-            <a href="accueil.html">Accueil</a>
-            <a href="Carte.html">Menu</a>
-            <a href="Galerie.html">Galerie</a>
-            <a href="Réservation.html">Réservation</a>
-        </nav>
-    </div>
+    <nav class="navbar navbar-expand-lg bg-orange">
+        <div class="container-fluid">
+            <a class="navbar-brand disabled" href="./accueil.html"> 
+                <img src="./logo2.png" alt="logo" style="height:75px; width: 75px; border-radius: 50%;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./Carte.html">Menus</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./galerie.html">Galerie</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./reservation.html">Réservation</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
     <!-- Menu du jour Section -->
     <div class="container mt-5"> <!--centre le contenu + ajoute une marge en haut pour espacer les sections-->
