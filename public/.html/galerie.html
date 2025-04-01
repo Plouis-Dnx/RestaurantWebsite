@@ -3,21 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Le Festin du Chef - Galerie</title>
-    <link rel="stylesheet" href="style2.css">
+    <title>Galerie - Le Festin du Chef</title>
+
     <!-- Lien vers Bootstrap CSS -->
     <link rel="stylesheet" href="./bootstrap.min.css">
-    <link rel="stylesheet" href="./style2.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
-<body>
-    <div class="header">
-        <nav>
-            <a href="accueil.html">Accueil</a>
-            <a href="Carte.html">Menu</a>
-            <a href="Galerie.html">Galerie</a>
-            <a href="Réservation.html">Réservation</a>
-        </nav>
+<body class="bg-blue">
+  <nav class="navbar navbar-expand-lg bg-orange">
+    <div class="container-fluid">
+        <a class="navbar-brand disabled" href="./accueil.html"> 
+            <img src="./logo2.png" alt="logo" style="height:75px; width: 75px; border-radius: 50%;">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="./menus.html">Menus</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./galerie.html">Galerie</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./reservation.html">Réservation</a>
+                </li>
+            </ul>
+        </div>
     </div>
+</nav>
 
     <!-- Titre de la page -->
     <div class="container mt-5">
@@ -26,7 +41,10 @@
             <p>Explorez nos plats et l'ambiance de notre restaurant.</p>
         </div>
 
-        <!-- Carrousel (image en vedette) -->
+        <!-- Section Carrousel (image en vedette) -->
+        <div class="text-center mb-4">
+            <h2>Nos plats en vedette</h2> <!-- Titre avant le carrousel -->
+        </div>
         <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -50,44 +68,53 @@
             </button>
         </div>
 
-        <!-- Galerie des images -->
-        <div class="row mt-5">
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="./mojito.jpg" class="card-img-top" alt="Mojito">
-                    <div class="card-body">
-                        <p class="card-text">Mojito - Rafraîchissant et savoureux.</p>
+        <!-- Section Galerie d'images -->
+        <div class="text-center mt-5">
+            <h2>Galerie de nos plats</h2> <!-- Titre avant la galerie d'images -->
+        </div>
+        <div class="container mb-5">
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="./soupe_a_l_oignon.jpg" class="card-img-top" alt="Soupe à l'oignon">
+                        <div class="card-body">
+                            <p class="card-text">Soupe à l'oignon - Un classique de la cuisine française.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="./cassoulet_toulousain.jpg" class="card-img-top" alt="Cassoulet Toulousain">
+                        <div class="card-body">
+                            <p class="card-text">Cassoulet Toulousain - Un classique de la cuisine française.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" style="height: 100%;">
+                    <div class="card">
+                        <img src="./tiramisu.jpg" class="card-img-top" alt="Tiramisu" style="height: 280px; object-fit: cover;">
+                        <div class="card-body">
+                            <p class="card-text">Tiramisu - Pour finir en beauté!</p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="./soupe_a_l_oignon.jpg" class="card-img-top" alt="Soupe à l'oignon">
-                    <div class="card-body">
-                        <p class="card-text">Soupe à l'oignon - Un classique de la cuisine française.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="./tiramisu.jpg" class="card-img-top" alt="Tiramisu">
-                    <div class="card-body">
-                        <p class="card-text">Tiramisu - Pour finir en beauté!</p>
-                    </div>
-                </div>
-                <!-- Ajoute d'autres images ici si nécessaire -->
-            </div>
-            <!-- Contrôles (Flèches de navigation) -->
-            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Précédent</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Suivant</span>
-            </a>
         </div>
     </div>
+
+    <!-- FOOTER -->
+    <footer class="p-3 bg-orange">
+        <div class="d-flex justify-content-between">
+            <div class="d-flex justify-content-center align-items-center">
+                <p class="fs-4">lefestinduchef.fr</p>
+            </div>
+            <div class="d-flex justify-content-center align-items-center">
+                <a href="https://github.com/Plouis-Dnx/RestaurantWebsite">
+                    <img src="logoGithub.png" alt="GitHub logo" style="height: 50px; width: 50px;">
+                </a>
+            </div>
+        </div>
+    </footer>
 
     <!-- Lien vers Bootstrap JS -->
     <script src="./bootstrap.bundle.min.js"></script>

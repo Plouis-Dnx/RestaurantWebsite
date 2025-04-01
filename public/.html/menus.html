@@ -6,39 +6,54 @@
     <title>Le Festin du Chef - Carte</title>
     <!-- Lien vers Bootstrap CSS -->
     <link rel="stylesheet" href="./bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
-<body class="bg-blue">
-    <div class="header">
-        <nav>
-            <a href="Accueil.html">Accueil</a>
-            <a href="Carte.html">Menu</a>
-            <a href="Galerie.html">Galerie</a>
-            <a href="Réservation.html">Réservation</a>
-        </nav>
-    </div>
+<body>
+    <nav class="navbar navbar-expand-lg bg-orange">
+        <div class="container-fluid">
+            <a class="navbar-brand disabled" href="./accueil.html"> 
+                <img src="./logo2.png" alt="logo" style="height:75px; width: 75px; border-radius: 50%;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./menus.html">Menus</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./galerie.html">Galerie</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./reservation.html">Réservation</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
     <!-- Menu du jour Section -->
-    <div class="container mt-5">
-        <div class="text-center mb-4">
+    <div class="container mt-5"> <!--centre le contenu + ajoute une marge en haut pour espacer les sections-->
+        <div class="text-center mb-4"> <!--centre le texte + ajoute une marge en bas-->
             <h1>Le Festin du Chef</h1>
             <p class="prix">38,00€ - Disponible uniquement le midi</p>
         </div>
 
-        <div class="row">
+        <div class="row"> <!--définit une ligne pour organiser les colonnes-->
             <!-- Entrée du jour -->
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Entrée du jour</h5>
-                        <p class="card-text">Salade fraîcheur aux tomates cerises, vinaigrette maison</p>
+            <div class="col-md-4 mb-4"> <!--définit une colonne qui prend 4 parts sur 12 (3 colonnes par ligne) + ajout d'une marge en bas-->
+                <div class="card" style="height: 100%;"> <!--définit une carte-->
+                    <div class="card-body"> <!--contient le texte-->
+                        <h5 class="card-title">Entrée du jour</h5> <!--contient le titre de la carte-->
+                        <p class="card-text">Salade fraîcheur aux tomates cerises, vinaigrette maison</p> <!--texte descriptif-->
                     </div>
                 </div>
             </div>
 
             <!-- Plat du jour -->
             <div class="col-md-4 mb-4">
-                <div class="card">
+                <div class="card" style="height: 100%;">
                     <div class="card-body">
                         <h5 class="card-title">Plat du jour</h5>
                         <p class="card-text">Filet de poulet rôti accompagné de légumes de saison et purée maison</p>
@@ -48,7 +63,7 @@
 
             <!-- Dessert du jour -->
             <div class="col-md-4 mb-4">
-                <div class="card">
+                <div class="card" style="height: 100%;">
                     <div class="card-body">
                         <h5 class="card-title">Dessert du jour</h5>
                         <p class="card-text">Tartelette aux fruits de saison avec crème chantilly</p>
@@ -63,7 +78,7 @@
         </div>
 		<div class="row">
             <div class="col-md-4 mb-4">
-                <div class="card">
+                <div class="card" style="height: 100%;">
                     <div class="card-body">
 					<h5 class="card-title">Entrées</h5>
 					<p class="card-text">Escargots de Bourgogne au beurre persillé  12,00€</p>
@@ -76,7 +91,7 @@
                 </div>
             </div>
 			<div class="col-md-4 mb-4">
-                <div class="card">
+                <div class="card" style="height: 100%;">
                     <div class="card-body">
 					<h5 class="card-title">Plats</h5>
 					<p class="card-text">Coq au vin , mijoté au vin rouge, légumes anciens  22,00€</p>
@@ -89,7 +104,7 @@
                 </div>
             </div>
 			<div class="col-md-4 mb-4">
-                <div class="card">
+                <div class="card" style="height: 100%;">
                     <div class="card-body">
 					<h5 class="card-title">Desserts</h5>
 					<p class="card-text">Crème brûlée à la vanille de Madagascar 8,00€</p>
@@ -110,7 +125,7 @@
 
         <div class="row">
             <div class="col-md-4 mb-4">
-                <div class="card">
+                <div class="card" style="height: 100%;">
                     <div class="card-body">
 					<h5 class="card-title">Softs</h5>
 						<p class="card-text">Jus d'orange pressé 4,50€</p>
@@ -123,7 +138,7 @@
                 </div>
             </div>
 			<div class="col-md-4 mb-4">
-                <div class="card">
+                <div class="card" style="height: 100%;">
                     <div class="card-body">
 					<h5 class="card-title">Cocktails</h5>
 						<p class="card-text">Mojito (Rhum, menthe fraîche, citron vert, sucre, eau gazeuse) 8,00€</p>
@@ -134,7 +149,7 @@
                 </div>
 			</div>
 				<div class="col-md-4 mb-4">
-                <div class="card">
+                <div class="card" style="height: 100%;">
                     <div class="card-body">
 					<h5 class="card-title">Boissons Chaudes</h5>
 						<p class="card-text">Expresso 2,50€</p>
@@ -155,7 +170,7 @@
 
         <div class="row">
             <div class="col-md-4 mb-4">
-                <div class="card">
+                <div class="card" style="height: 100%;">
                     <div class="card-body">
 					<h5 class="card-title">Vins Rouges</h5>
 						<p class="card-text">Bordeaux – Château Haut-Médoc 2018 <br>6€/verre | 28€/bouteille </p>
@@ -165,7 +180,7 @@
                 </div>
             </div>
 			<div class="col-md-4 mb-4">
-                <div class="card">
+                <div class="card" style="height: 100%;">
                     <div class="card-body">
 					<h5 class="card-title">Vins Blancs</h5>
 						<p class="card-text">Sancerre 2021 (Loire) <br>6€/verre | 28€/bouteille</p>
@@ -175,7 +190,7 @@
                 </div>
             </div>
 			<div class="col-md-4 mb-4">
-                <div class="card">
+                <div class="card" style="height: 100%;">
                     <div class="card-body">
 					<h5 class="card-title">Vins Moelleux & Champagnes</h5>
 						<p class="card-text">Sauternes 2017 (Bordeaux) <br>7€/verre | 36€/bouteille</p>
@@ -186,7 +201,22 @@
             </div>
 		</div>
 	</div>
+
+    <!-- FOOTER -->
+    <footer class="p-3 bg-orange">
+        <div class="d-flex justify-content-between">
+            <div class="d-flex justify-content-center align-items-center">
+                <p class="fs-4">lefestinduchef.fr</p>
+            </div>
+            <div class="d-flex justify-content-center align-items-center">
+                <a href="https://github.com/Plouis-Dnx/RestaurantWebsite">
+                    <img src="logoGithub.png" alt="GitHub logo" style="height: 50px; width: 50px;">
+                </a>
+            </div>
+        </div>
+    </footer>
 	
-    <script src="./bootstrap.min.js"></script>
+    <!-- Lien vers Bootstrap JS (optionnel pour le bon fonctionnement de certains composants de Bootstrap) -->
+    <script src="./bootstrap.bundle.min.js"></script>
 </body>
 </html>

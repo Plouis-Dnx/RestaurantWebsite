@@ -17,3 +17,11 @@ p{
 .bg-blue{
     background-color: rgb(15, 20, 38);
 }
+
+#carouselExample .carousel-inner img {
+    width: 100%;
+    height: 400px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
