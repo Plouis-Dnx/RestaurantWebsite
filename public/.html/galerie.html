@@ -1,11 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galerie</title>
+    <title>Le Festin du Chef - Galerie</title>
+    <link rel="stylesheet" href="style2.css">
+    <!-- Lien vers Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-    
+    <div class="header">
+        <nav>
+            <a href="Accueil.html">Accueil</a>
+            <a href="Carte.html">Menu</a>
+            <a href="Galerie.html">Galerie</a>
+            <a href="Réservation.html">Réservation</a>
+        </nav>
+    </div>
+
+    <!-- Galerie Section -->
+    <div class="container mt-5">
+        <div class="text-center mb-4">
+            <h1>Galerie</h1>
+            <p>Découvrez quelques-uns de nos plats et de notre ambiance.</p>
+        </div>
+
+        <div class="row">
+            <!-- Image 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="soupe_a_l_oignon" class="card-img-top" alt="Soupe à l'oignon">
+                    <div class="card-body">
+                        <h5 class="card-title">Soupe à l'oignon</h5>
+                        <p class="card-text">Soupe à l'oignon gratinée , croûtons & emmental</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="boeuf_bourguignon.jpg" class="card-img-top" alt="Boeuf bourguignon">
+                    <div class="card-body">
+                        <h5 class="card-title">Bœuf bourguignon</h5>
+                        <p class="card-text">Bœuf bourguignon , pommes de terre vapeur</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="tarte_tatin.jpg" class="card-img-top" alt="Tarte Tatin">
+                    <div class="card-body">
+                        <h5 class="card-title">Tarte Tatin</h5>
+                        <p class="card-text">Tarte Tatin aux pommes caramélisées, crème fraîche</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vous pouvez ajouter plus d'images ici en suivant le même modèle -->
+        </div>
+    </div>
+
+    <!-- Lien vers Bootstrap JS (optionnel pour le bon fonctionnement de certains composants de Bootstrap) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
