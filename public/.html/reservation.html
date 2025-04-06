@@ -1,11 +1,75 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Réservation</title>
-</head>
-<body>
+    <link rel="stylesheet" href="./bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./index.global.min.js"></script>
+    <script type="module" src="./calendar.js"></script>
     
+    <title>Réservation</title>
+
+</head>
+<body class="d-flex flex-column min-vh-100 bg-blue">
+
+    <!-- HEADER -->
+    <nav class="navbar navbar-expand-lg bg-orange mb-3">
+        <div class="container-fluid">
+            <a class="navbar-brand disabled" href="./accueil.html"> 
+                <img src="./logo2.png" alt="logo" style="height:75px; width: 75px; border-radius: 50%;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./menus.html">Menus</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./galerie.html">Galerie</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./reservation.html">Réservation</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN -->
+    <main style="flex: 1;">
+        <div class="card mx-3 bg-primary text-white shadow-lg">
+            <div class="card-body">
+                L'équipe du Festin du Chef souhaite informer sa clientèle que chaque réservation
+                faite après le début du service du midi ou du soir est à faire par téléphone au 03 20 00 01 03.
+                Merci de votre compréhension.
+            </div>
+        </div>
+        <div class="container">
+            <div class="card mx-3 mt-3">
+                <div class="card-body">
+                    <div id="calendar"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="p-3 bg-orange mt-3">
+        <div class="d-flex justify-content-between">
+            <div class="d-flex justify-content-center align-items-center">
+                <p class="fs-4">lefestinduchef.fr</p>
+            </div>
+            <div class="d-flex justify-content-center align-items-center">
+                <a href="https://github.com/Plouis-Dnx/RestaurantWebsite">
+                    <img src="logoGithub.png" alt="GitHub logo" style="height: 50px; width: 50px;">
+                </a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
