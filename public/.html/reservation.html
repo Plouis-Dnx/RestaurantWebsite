@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./bootstrap.min.css">
     <link rel="stylesheet" href="./style.css">
+    <script src="./index.global.min.js"></script>
+    <script type="module" src="./calendar.js"></script>
     
     <title>Réservation</title>
 
@@ -13,7 +15,7 @@
 <body class="d-flex flex-column min-vh-100 bg-blue">
 
     <!-- HEADER -->
-    <nav class="navbar navbar-expand-lg bg-orange">
+    <nav class="navbar navbar-expand-lg bg-orange mb-3">
         <div class="container-fluid">
             <a class="navbar-brand disabled" href="./accueil.html"> 
                 <img src="./logo2.png" alt="logo" style="height:75px; width: 75px; border-radius: 50%;">
@@ -38,43 +40,26 @@
     </nav>
 
     <!-- MAIN -->
-     <div class="card m-3 bg-primary text-white shadow-lg">
-        <div class="card-body">
-            L'équipe du Festin du Chef souhaite informer sa clientèle que chaque réservation
-            faite après le début du service du midi ou du soir est à faire par téléphone au 03 20 00 01 03.
-            Merci de votre compréhension.
+    <main style="flex: 1;">
+        <div class="card mx-3 bg-primary text-white shadow-lg">
+            <div class="card-body">
+                L'équipe du Festin du Chef souhaite informer sa clientèle que chaque réservation
+                faite après le début du service du midi ou du soir est à faire par téléphone au 03 20 00 01 03.
+                Merci de votre compréhension.
+            </div>
         </div>
-    </div>
+        <div class="container">
+            <div class="card mx-3 mt-3">
+                <div class="card-body">
+                    <div id="calendar"></div>
+                </div>
+            </div>
+        </div>
+    </main>
 
-    <div class="button-group mx-2 mb-3">
-        <button id="btn-reserver" class="btn btn-sm btn-primary">Réserver maintenant</button>
-        
-        <div id="formulaire-reservation" style="display: none; margin-top: 20px;">
-            <form>
-              <label for="nom">Nom :</label>
-              <input type="text" id="nom" name="nom" required>
-          
-              <label for="numéro de téléphone">Tél:</label>
-              <input type="number" id="Tél" name="Tél" required>
-          
-              < <label for="date">Date :</label>
-              <input type="date" id="date" name="date" required>
-          
-              <label for="heure">Heure :</label>
-              <input type="time" id="heure" name="heure" required>
-          
-              <label for="couverts">Nombre de couverts :</label>
-              <input type="number" id="couverts" name="couverts" min="1" max="20" required>
-          
-              <button type="submit">Envoyer la réservation</button>
-            </form>
-          </div>
-        <button class="btn btn-sm btn-primary">Liste d'attente</button>
-    </div>
-    <div id="calendar"></div>
 
     <!-- FOOTER -->
-    <footer class="p-3 bg-orange">
+    <footer class="p-3 bg-orange mt-3">
         <div class="d-flex justify-content-between">
             <div class="d-flex justify-content-center align-items-center">
                 <p class="fs-4">lefestinduchef.fr</p>
@@ -86,12 +71,5 @@
             </div>
         </div>
     </footer>
-
-        <script src="./node_modules/@fullcalendar/core/main.js"></script>
-        <script src="./node_modules/@fullcalendar/daygrid/main.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/index.global.min.js"></script>
-        
-
-        <script src="./calendar.js"></script>  
 </body>
 </html>

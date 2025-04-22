@@ -24,3 +24,12 @@ p{
     display: block;
     margin: 0 auto;
 }
+
+#calendar a {
+    text-decoration: none;
+    color: orange;
+}
+
+#calendar .fc-day:not(th):hover {
+    background-color: rgb(218, 216, 255);
+}
