@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // Quand on clique sur une case
       dateClick: function(info) {
+        /*
           let title = prompt("Nom de l'événement :"); // Demander un titre à l'utilisateur
           if (title) {
               calendar.addEvent({
@@ -17,6 +18,10 @@ document.addEventListener('DOMContentLoaded', function () {
                   allDay: true
               });
           }
+        */
+
+        // Clic sur une case vide : ajout réservation
+        // Clic sur un bouton réservation : modifier/annuler/supprimer une réservation
       }
   });
 
