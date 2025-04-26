@@ -22,7 +22,7 @@ router.get('/reservations', (req, res) => {
 // POST
 
 // Ajouter une réservation
-router.post('/reservate', (req, res) => {
+router.post('/book', (req, res) => {
     const {date, heure, nbpersonnes} = req.body;
     if(!date || !heure || !nbpersonnes){
         res.status(400).json({error: "Not enough arguments."});
@@ -48,7 +48,7 @@ router.post('/reservate', (req, res) => {
 // PUT
 
 // Modifier une réservation
-router.put('/updateReservation', (req, res) => {
+router.put('/update', (req, res) => {
     const {date, heure, nbpersonnes} = req.body;
     if(!date || !heure || !nbpersonnes){
         res.status(400).json({error: "Not enough arguments."});
@@ -68,7 +68,7 @@ router.put('/updateReservation', (req, res) => {
 // DELETE
 
 // Annuler une réservation
-router.delete('/cancelReservation', (req, res) => {
+router.delete('/cancel', (req, res) => {
     const idReservation = req.body;
     if(!idReservation) {
         res.status(400).json({error: "Not enough arguments. Waiting for a specific reservation."});
