@@ -51,7 +51,41 @@
         <div class="container">
             <div class="card mx-3 mt-3">
                 <div class="card-body">
+                    <!-- Calendrier -->
                     <div id="calendar"></div>
+
+                    <div id="formulaires" style="display: none;">
+                        <!-- Formulaire des Horaires -->
+                        <form id="horaires" class="mb-3">
+                            <div class="container">
+                                <p class="text-start fs-2"> Déjeuner </p>
+                                <button class="btn bg-orange"> 12:00 </button>
+                                <button class="btn bg-orange"> 12:30 </button>
+                                <button class="btn bg-orange"> 13:00 </button>
+                                <button class="btn bg-orange"> 13:30 </button>
+                            </div>
+                            <div class="container">
+                                <p class="text-start fs-2"> Dîner </p>
+                                <button class="btn bg-orange"> 19:00 </button>
+                                <button class="btn bg-orange"> 19:30 </button>
+                                <button class="btn bg-orange"> 20:00 </button>
+                                <button class="btn bg-orange"> 20:30 </button>
+                            </div>
+                        </form>
+
+                        <!-- Formulaire du nb de personnes -->
+                        <form id="nbPersonnes" class="ms-2">
+                            <p class="text-start fs-2"> Nombre de Personnes </p>
+                            <button class="btn bg-orange"> 1 </button>
+                            <button class="btn bg-orange"> 2 </button>
+                            <button class="btn bg-orange"> 3 </button>
+                            <button class="btn bg-orange"> 4 </button>
+                        </form>
+                    </div>
+                    <div id="button-container" class="d-flex justify-content-end align-items-center">
+                        <button id="retour" class="btn btn-danger me-1"> Retour </button>
+                        <button id="valider" class="btn btn-success"> Valider </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -72,6 +106,7 @@
         </div>
     </footer>
 
+    <script src="./interaction.js"></script>
     <script src="./bootstrap.bundle.min.js"></script>
 
 </body>
