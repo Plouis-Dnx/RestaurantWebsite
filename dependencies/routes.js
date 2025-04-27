@@ -8,6 +8,7 @@ const db = require('./db');
 
 // Récupérer une réservation pour pouvoir les afficher plus tard
 router.get('/reservations', (req, res) => {
+    /*
     const data = `SELECT * FROM reservations`;
     db.all(data, (err, results) => {
         if (err) {
@@ -17,6 +18,13 @@ router.get('/reservations', (req, res) => {
         }
         res.json(results);
     });
+    */
+    res.json(
+        {
+            'idReservation':'1', 
+            'date':''
+        }
+    );
 });
 
 // POST
