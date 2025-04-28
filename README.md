@@ -1,2 +1,4 @@
-# Tâches 
- Cette partie concernera le développement des fontions nécessaires au bon fonctionnement de la gestion des réservations (ajout, modification, annulation, récupération). Ne pas oublier d'afficher les erreurs directement sur la page web !
+# Exemple de site Web pour un Restaurant
+Dans ce projet, nous avons créé un exemple de site web pouvant être utilisé par un restaurant.
+Des modifications supplémentaires peuvent être faites. Merci de nous partager vos retours ainsi que vos idées
+pour pouvoir faire avancer le projet ! 
