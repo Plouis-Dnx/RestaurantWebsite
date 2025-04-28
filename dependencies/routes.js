@@ -22,15 +22,18 @@ router.get('/reservations', (req, res) => {
     res.json(
         [{
             'idReservation':'1', 
-            'date':'2025-04-30'
+            'date':'2025-04-30',
+            'titre':'Bonjour'
         },
         {
             'idReservation':'2',
-            'date':'2025-04-30'
+            'date':'2025-04-30',
+            'titre':'Au revoir'
         },
         {
             'idReservation':'3',
-            'date':'2025-04-27'
+            'date':'2025-04-27',
+            'titre':'Henry Maurice'
         }]
     );
 });
