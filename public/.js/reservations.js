@@ -5,25 +5,27 @@ export async function reservations(calendar){
         const data = await res.json();
 
         // Ajout des reservations au bon emplacement etc.
-        data.forEach(e => {
+        data.forEach(reservation => {
             calendar.addEvent({
-                title: e.titre,
-                start: e.date, // Modifier ici en fonction de la base de données
+                id: reservation.idReservation,
+                title: reservation.heure + reservation.nbPersonnes,
+                start: reservation.dates, // Modifier ici en fonction de la base de données
                 allDay: true
             });
         });
     } else {
+        alert('Unabled to find reservations.');
         console.log('Unabled to find reservations.');
     }
 }
 
 // Ajout
-export async function book(heure, nbPersonnes){
+export async function book(dates, heure, nbpersonnes){
     try {
         const res = await fetch('/book', {
-            method: 'PUT',
+            method: 'POST',
             headers: {'Content-type': 'application/json'},
-            body: JSON.stringify({heure, nbPersonnes})
+            body: JSON.stringify({dates, heure, nbpersonnes})
         });
         if(!res.ok) throw new Error('Failed to book');
         else alert('Reservation successfully added !');
@@ -34,12 +36,12 @@ export async function book(heure, nbPersonnes){
 }
 
 // Modification
-export async function update(heure, nbPersonnes){
+export async function update(heure, nbPersonnes, idReservation){
     try{
         const res = await fetch('/update', {
             method: 'PUT',
             headers: {'Content-type': 'application/json'},
-            body: JSON.stringify({heure, nbPersonnes})
+            body: JSON.stringify({heure, nbPersonnes, idReservation})
         });
 
         if(!res.ok) throw new Error('Failed to update the current reservation');
@@ -51,7 +53,7 @@ export async function update(heure, nbPersonnes){
 }
 
 // Annulation
-export async function cancel() {
+export async function cancel(idReservation) {
     try{
         const res = await fetch('/cancel', {
             method: 'DELETE',

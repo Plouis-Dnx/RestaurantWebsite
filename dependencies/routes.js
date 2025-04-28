@@ -8,7 +8,6 @@ const db = require('./db');
 
 // Récupérer une réservation pour pouvoir les afficher plus tard
 router.get('/reservations', (req, res) => {
-    /*
     const data = `SELECT * FROM reservations`;
     db.all(data, (err, results) => {
         if (err) {
@@ -18,8 +17,8 @@ router.get('/reservations', (req, res) => {
         }
         res.json(results);
     });
-    */
-    res.json(
+
+    /*res.json(
         [{
             'idReservation':'1', 
             'date':'2025-04-30',
@@ -35,22 +34,22 @@ router.get('/reservations', (req, res) => {
             'date':'2025-04-27',
             'titre':'Henry Maurice'
         }]
-    );
+    );*/
 });
 
 // POST
 
 // Ajouter une réservation
 router.post('/book', (req, res) => {
-    const {date, heure, nbpersonnes} = req.body;
-    if(!date || !heure || !nbpersonnes){
+    const {dates, heure, nbpersonnes} = req.body;
+    if(!dates || !heure || !nbpersonnes){
         res.status(400).json({error: "Not enough arguments."});
         return;
     }
     try{
         db.run(
-            `INSERT INTO reservations(date, heure, nbpersonnes) VALUES (?, ?, ?)`,
-            [date, heure, nbpersonnes], (err) => {
+            `INSERT INTO reservations(dates, heure, nbpersonnes) VALUES (?, ?, ?)`,
+            [dates, heure, nbpersonnes], (err) => {
                 if(err) {
                     console.log('Server error', err.message);
                     return res.status(500).json({error: 'Server error.'});
@@ -59,7 +58,7 @@ router.post('/book', (req, res) => {
             }
         );
     } catch (err) {
-        console.log('Error : ', err);
+        console.log('Error in server : ', err);
         res.status(500).json({error: 'Server error.'});
     }
 });
@@ -68,13 +67,13 @@ router.post('/book', (req, res) => {
 
 // Modifier une réservation
 router.put('/update', (req, res) => {
-    const {date, heure, nbpersonnes} = req.body;
-    if(!date || !heure || !nbpersonnes){
+    const {heure, nbPersonnes, idReservation} = req.body;
+    if(!heure || !nbPersonnes || !idReservation){
         res.status(400).json({error: "Not enough arguments."});
         return;
     }
-    db.run('UPDATE reservation SET date = ? AND SET heure = ? AND SET nbpersonnes = ?',
-        [date, heure, nbpersonnes], (err) => {
+    db.run('UPDATE reservations SET heure = ?, nbPersonnes = ? WHERE idReservation = ?',
+        [heure, nbPersonnes, idReservation], (err) => {
             if(err){
                 console.log('Failed to update reservation.', err.message);
                 return res.status(500).json({error: 'Failed to update reservation.'});
@@ -88,7 +87,7 @@ router.put('/update', (req, res) => {
 
 // Annuler une réservation
 router.delete('/cancel', (req, res) => {
-    const idReservation = req.body;
+    const { idReservation } = req.body;
     if(!idReservation) {
         res.status(400).json({error: "Not enough arguments. Waiting for a specific reservation."});
         return;

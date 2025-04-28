@@ -1,20 +1,5 @@
-document.getElementById("button-container").querySelectorAll('button')
-    .forEach(btn => {
-        btn.addEventListener('click', () => {
-            // Calendar rendu visible
-            const calendrier = document.getElementById('calendar').style;
-            calendrier.display = 'block';
-            calendrier.zIndex = 1;
-            calendrier.opacity = 1;
-            calendrier.height = 'auto';
-            calendrier.overflow = 'visible';
-
-            // Formulaire caché
-            document.getElementById('formulaires').style.display = 'none';
-        });
-    });
-
 export let heure, nbPersonnes;
+
 document.querySelectorAll('#horaires button').forEach(btn => {
     btn.addEventListener('click', e => {
         e.preventDefault();
