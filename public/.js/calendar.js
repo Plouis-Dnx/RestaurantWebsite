@@ -50,4 +50,9 @@ document.getElementById('supprimer').addEventListener('click', async () => {
     }
 });
 
+//Gestion du bouton retour
+document.getElementById('retour').addEventListener('click', () => {
+    window.location.reload()
+});
+
 calendar.render();
