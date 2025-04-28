@@ -1,35 +1,53 @@
 import {heure, nbPersonnes} from './interaction.js'
+import { reservations, book, update, cancel } from "./reservations.js";
 
-document.addEventListener('DOMContentLoaded', function () {
-    let calendarEl = document.getElementById('calendar');
-    let calendar = new FullCalendar.Calendar(calendarEl, {
-        initialView: 'dayGridWeek',
-        selectable: true,
-        editable: false,
-        events: [],
-    });
+let idReservation = null;
+let calendarEl = document.getElementById('calendar');
+let calendar = new FullCalendar.Calendar(calendarEl, {
+    initialView: 'dayGridMonth',
+    selectable: true,
+    editable: false,
+    events: [],
+    eventClick: function(info) {
+        idReservation = info.event.id;
+        console.log('ID de la réservation cliquée :', idReservation);
 
-    calendar.render();
-
-    let selectedDate = null;
-
-    // Quand on clique sur une case du calendrier
-    calendar.on('dateClick', function(info) {
+        alert('Vous allez modifier une réservation !');
         document.getElementById('calendar').style.display = 'none';
         document.getElementById('formulaires').style.display = 'block';
+        document.getElementById('supprimer').style.display = 'block';
+    }
+});
 
-        // Stocke la date sélectionnée
-        selectedDate = info.dateStr;
-    });
+// Récupérations des réservations dans la base de données
+document.addEventListener('DOMContentLoaded', () => {
+    reservations(calendar);
+});
 
-    // Écouteur "Valider" attaché **une seule fois**
-    document.getElementById('valider').addEventListener('click', () => {
-        if (selectedDate) {
-            calendar.addEvent({
-                title: heure + nbPersonnes,
-                start: selectedDate,
-                allDay: true
-            });
-        }
+//Ajout d'une réservation
+calendar.on('dateClick', info => {
+    document.getElementById('calendar').style.display = 'none';
+    document.getElementById('formulaires').style.display = 'block';
+    document.getElementById('supprimer').style.display = 'none'; // On n'affiche pas le bouton de suppression
+
+    document.getElementById('valider').addEventListener('click', async () => {
+        await book(info.dateStr, heure, nbPersonnes);
+        window.location.reload();
     });
 });
+
+document.getElementById('valider').addEventListener('click', async () => {
+    if(idReservation) {
+        await update(heure, nbPersonnes, idReservation);
+        window.location.reload();
+    }
+});
+
+document.getElementById('supprimer').addEventListener('click', async () => {
+    if(idReservation) {
+        await cancel(idReservation);
+        window.location.reload();
+    }
+});
+
+calendar.render();

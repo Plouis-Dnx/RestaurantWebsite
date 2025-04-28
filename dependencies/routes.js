@@ -17,21 +17,39 @@ router.get('/reservations', (req, res) => {
         }
         res.json(results);
     });
+
+    /*res.json(
+        [{
+            'idReservation':'1', 
+            'date':'2025-04-30',
+            'titre':'Bonjour'
+        },
+        {
+            'idReservation':'2',
+            'date':'2025-04-30',
+            'titre':'Au revoir'
+        },
+        {
+            'idReservation':'3',
+            'date':'2025-04-27',
+            'titre':'Henry Maurice'
+        }]
+    );*/
 });
 
 // POST
 
 // Ajouter une réservation
-router.post('/reservate', (req, res) => {
-    const {date, heure, nbpersonnes} = req.body;
-    if(!date || !heure || !nbpersonnes){
+router.post('/book', (req, res) => {
+    const {dates, heure, nbpersonnes} = req.body;
+    if(!dates || !heure || !nbpersonnes){
         res.status(400).json({error: "Not enough arguments."});
         return;
     }
     try{
         db.run(
-            `INSERT INTO reservations(date, heure, nbpersonnes) VALUES (?, ?, ?)`,
-            [date, heure, nbpersonnes], (err) => {
+            `INSERT INTO reservations(dates, heure, nbpersonnes) VALUES (?, ?, ?)`,
+            [dates, heure, nbpersonnes], (err) => {
                 if(err) {
                     console.log('Server error', err.message);
                     return res.status(500).json({error: 'Server error.'});
@@ -40,7 +58,7 @@ router.post('/reservate', (req, res) => {
             }
         );
     } catch (err) {
-        console.log('Error : ', err);
+        console.log('Error in server : ', err);
         res.status(500).json({error: 'Server error.'});
     }
 });
@@ -48,14 +66,14 @@ router.post('/reservate', (req, res) => {
 // PUT
 
 // Modifier une réservation
-router.put('/updateReservation', (req, res) => {
-    const {date, heure, nbpersonnes} = req.body;
-    if(!date || !heure || !nbpersonnes){
+router.put('/update', (req, res) => {
+    const {heure, nbPersonnes, idReservation} = req.body;
+    if(!heure || !nbPersonnes || !idReservation){
         res.status(400).json({error: "Not enough arguments."});
         return;
     }
-    db.run('UPDATE reservation SET date = ? AND SET heure = ? AND SET nbpersonnes = ?',
-        [date, heure, nbpersonnes], (err) => {
+    db.run('UPDATE reservations SET heure = ?, nbPersonnes = ? WHERE idReservation = ?',
+        [heure, nbPersonnes, idReservation], (err) => {
             if(err){
                 console.log('Failed to update reservation.', err.message);
                 return res.status(500).json({error: 'Failed to update reservation.'});
@@ -68,8 +86,8 @@ router.put('/updateReservation', (req, res) => {
 // DELETE
 
 // Annuler une réservation
-router.delete('/cancelReservation', (req, res) => {
-    const idReservation = req.body;
+router.delete('/cancel', (req, res) => {
+    const { idReservation } = req.body;
     if(!idReservation) {
         res.status(400).json({error: "Not enough arguments. Waiting for a specific reservation."});
         return;
