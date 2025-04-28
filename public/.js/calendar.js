@@ -1,35 +1,41 @@
 import {heure, nbPersonnes} from './interaction.js'
 
+import { reservations, book, update, cancel } from "./reservations.js";
+
+let calendarEl = document.getElementById('calendar');
+let calendar = new FullCalendar.Calendar(calendarEl, {
+    initialView: 'dayGridMonth',
+    selectable: true,
+    editable: false,
+    events: [],
+});
+
+// Récupérations des réservations dans la base de données
 document.addEventListener('DOMContentLoaded', function () {
-    let calendarEl = document.getElementById('calendar');
-    let calendar = new FullCalendar.Calendar(calendarEl, {
-        initialView: 'dayGridWeek',
-        selectable: true,
-        editable: false,
-        events: [],
+    reservations(calendar);
+});
+
+//Ajout d'une réservation
+calendar.on('dateClick', info => {
+    document.getElementById('calendar').style.display = 'none';
+    document.getElementById('formulaires').style.display = 'block';
+
+    document.getElementById('valider').addEventListener('click', () => {
+        book(heure, nbPersonnes);
     });
+});
 
-    calendar.render();
-
-    let selectedDate = null;
-
-    // Quand on clique sur une case du calendrier
-    calendar.on('dateClick', function(info) {
+// Modification d'une réservation
+document.addEventListener('click', e => { //Clique sur une réservation
+    if(e.target.matches('div.fc-event-title-container')) {
+        alert('Vous allez modifier une réservation !');
         document.getElementById('calendar').style.display = 'none';
         document.getElementById('formulaires').style.display = 'block';
 
-        // Stocke la date sélectionnée
-        selectedDate = info.dateStr;
-    });
-
-    // Écouteur "Valider" attaché **une seule fois**
-    document.getElementById('valider').addEventListener('click', () => {
-        if (selectedDate) {
-            calendar.addEvent({
-                title: heure + nbPersonnes,
-                start: selectedDate,
-                allDay: true
-            });
-        }
-    });
+        document.getElementById('valider').addEventListener('click', () => {
+            update(heure, nbPersonnes);
+        });
+    }
 });
+
+calendar.render();
