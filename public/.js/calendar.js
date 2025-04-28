@@ -50,4 +50,8 @@ document.getElementById('supprimer').addEventListener('click', async () => {
     }
 });
 
+document.getElementById('retour').addEventListener('click', () => {
+    window.location.reload();
+});
+
 calendar.render();
