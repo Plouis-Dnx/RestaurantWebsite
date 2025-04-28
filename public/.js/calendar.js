@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
 calendar.on('dateClick', info => {
     document.getElementById('calendar').style.display = 'none';
     document.getElementById('formulaires').style.display = 'block';
+    document.getElementById('supprimer').style.display = 'none'; // On n'affiche pas le bouton de suppression
 
     document.getElementById('valider').addEventListener('click', () => {
         book(heure, nbPersonnes);
@@ -31,11 +32,19 @@ document.addEventListener('click', e => { //Clique sur une réservation
         alert('Vous allez modifier une réservation !');
         document.getElementById('calendar').style.display = 'none';
         document.getElementById('formulaires').style.display = 'block';
+        document.getElementById('supprimer').style.display = 'block'; // Affichage du bouton de suppression
 
         document.getElementById('valider').addEventListener('click', () => {
             update(heure, nbPersonnes);
         });
+
+        // Suppression d'une réservation
+        document.getElementById('supprimer').addEventListener('click', () => {
+            cancel(idReservation);
+        })
     }
 });
+
+// Annulation d'une réservation
 
 calendar.render();
