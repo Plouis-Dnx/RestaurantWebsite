@@ -6,53 +6,60 @@ export async function reservations(){
 
         // Ajout des reservations au bon emplacement etc.
 
-        document.addEventListener('DOMContentLoaded', function () {
-            let calendarEl = document.getElementById('calendar');
-            let calendar = new FullCalendar.Calendar(calendarEl, {
-                initialView: 'dayGridWeek',
-                selectable: true,
-                editable: false,
-                events: [],
-            });
-
-            data.forEach(e => {
-                calendar.addEvent({
-                    title: heure + nbPersonnes,
-                    start: e.date, // Modifier ici en fonction de la base de données
-                    allDay: true
-                });
-            });
-            
-            calendar.render();
+        
+        let calendarEl = document.getElementById('calendar');
+        let calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: 'dayGridMonth',
+            selectable: true,
+            editable: false,
+            events: [],
         });
+        data.forEach(e => {
+            calendar.addEvent({
+                title: e.date,
+                start: e.date, // Modifier ici en fonction de la base de données
+                allDay: true
+            });
+        });
+        
+        calendar.render();
+        return calendar;
     } else {
-        message = 'Unabled to find reservations.';
+        console.log('Unabled to find reservations.');
     }
 }
 
 // Ajout
-export async function book(){
-    const res = await fetch('/book');
-    // Lorsqu'une validation de la réservation est envoyée via formulaire
-    if(res.ok){
-        const data = await res.json();
-        // Ajout des reservations au bon emplacement etc.
-        
-    } else {
-        message = 'Unabled to find reservations.';
+export async function book(heure, nbPersonnes){
+    try {
+        const res = await fetch('/book', {
+            method: 'PUT',
+            headers: {'Content-type': 'application/json'},
+            body: JSON.stringify({heure, nbPersonnes})
+        });
+        if(!res.ok) throw new Error('Failed to book');
+        else alert('Reservation successfully added !');
+    } catch(err) {
+        console.error(err);
+        alert(err);
     }
 }
 
 // Modification
-export async function update(){
-    const res = await fetch('/update');
-    // Lorsqu'on clique sur le bouton "Modifier" si le nom et prénoms correspondent ?
-    if(res.ok){
-        const data = await res.json();
-        // Ajout des reservations au bon emplacement etc.
-        
-    } else {
-        message = 'Unabled to find reservations.';
+export async function update(heure, nbPersonnes){
+    try{
+        alert('Vous allez modifier une réservation !');
+        const res = await fetch('/update', {
+            method: 'PUT',
+            headers: {'Content-type': 'application/json'},
+            body: JSON.stringify({heure, nbPersonnes})
+        });
+
+        if(!res.ok) throw new Error('Failed to update the current reservation');
+        else alert('Reservation successfully updated !');
+    } catch(err) {
+        console.error(err);
+        alert(err);
     }
 }
 
@@ -65,6 +72,6 @@ export async function cancel() {
         // Ajout des reservations au bon emplacement etc.
         
     } else {
-        message = 'Unabled to find reservations.';
+        console.log('Unabled to find reservations.');
     }
 }

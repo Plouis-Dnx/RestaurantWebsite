@@ -1,29 +1,29 @@
+import { reservations, book, update, cancel } from "./reservations.js";
+
+let calendar = null;
+
+// Récupérations des réservations dans la base de données
 document.addEventListener('DOMContentLoaded', function () {
-  let calendarEl = document.getElementById('calendar');
+    calendar = reservations();
+});
 
-  let calendar = new FullCalendar.Calendar(calendarEl, {
-      initialView: 'dayGridMonth', // Vue par défaut
-      selectable: true, // Permet la sélection de dates
-      editable: true, // Permet le déplacement des événements
-      events: [], // Liste des événements (vide au début)
+// Modification d'une réservation
+document.addEventListener('click', e => {
+    if(e.target.matches('div.fc-event-title-container')) {
+        document.getElementById('calendar').style.display = 'none';
+        document.getElementById('formulaires').style.display = 'block';
 
-      // Quand on clique sur une case
-      dateClick: function(info) {
-        /*
-          let title = prompt("Nom de l'événement :"); // Demander un titre à l'utilisateur
-          if (title) {
-              calendar.addEvent({
-                  title: title,
-                  start: info.dateStr, // Date sélectionnée
-                  allDay: true
-              });
-          }
-        */
+        document.getElementById('valider').addEventListener('click', () => {
+            update(heure, nbPersonnes);
+        });
+    }
+});
 
-        // Clic sur une case vide : ajout réservation
-        // Clic sur un bouton réservation : modifier/annuler/supprimer une réservation
-      }
-  });
+document.getElementById('valider').addEventListener('click', () => {
+    book(heure, nbPersonnes);
+});
 
-  calendar.render();
+calendar.on('dateClick', info => {
+    document.getElementById('calendar').style.display = 'none';
+    document.getElementById('formulaires').style.display = 'block';
 });
