@@ -3,7 +3,7 @@ async function initMap() {
     const { Map } = await google.maps.importLibrary("maps");
     const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
 
-    const location = { lat: 50.349998, lng: 3.53333 }; // Paris coordinates
+    const location = { lat: 50.349998, lng: 3.53333 }; // Valenciennes coordinates
 
     const map = new Map(document.getElementById("map"), {
         center: location,

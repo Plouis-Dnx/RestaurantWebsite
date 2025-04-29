@@ -9,7 +9,7 @@ export async function reservations(calendar){
             calendar.addEvent({
                 id: reservation.idReservation,
                 title: reservation.heure + reservation.nbPersonnes,
-                start: reservation.dates, // Modifier ici en fonction de la base de données
+                start: reservation.dates, 
                 allDay: true
             });
         });
@@ -22,6 +22,7 @@ export async function reservations(calendar){
 // Ajout
 export async function book(dates, heure, nbpersonnes){
     try {
+        if(!dates || !heure || !nbpersonnes) throw new Error('Arguments missing');
         const res = await fetch('/book', {
             method: 'POST',
             headers: {'Content-type': 'application/json'},
@@ -38,6 +39,7 @@ export async function book(dates, heure, nbpersonnes){
 // Modification
 export async function update(heure, nbPersonnes, idReservation){
     try{
+        if(!heure || !nbPersonnes || !idReservation) throw new Error('Arguments missing');
         const res = await fetch('/update', {
             method: 'PUT',
             headers: {'Content-type': 'application/json'},
@@ -55,6 +57,7 @@ export async function update(heure, nbPersonnes, idReservation){
 // Annulation
 export async function cancel(idReservation) {
     try{
+        if(!idReservation) throw new Error('Unable to find the specified reservation');
         const res = await fetch('/cancel', {
             method: 'DELETE',
             headers: {'Content-type': 'application/json'},

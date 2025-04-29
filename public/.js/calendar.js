@@ -4,6 +4,7 @@ import { reservations, book, update, cancel } from "./reservations.js";
 let idReservation = null;
 let calendarEl = document.getElementById('calendar');
 let calendar = new FullCalendar.Calendar(calendarEl, {
+    themeSystem: 'bootstrap',
     initialView: 'dayGridMonth',
     selectable: true,
     editable: false,
@@ -52,7 +53,7 @@ document.getElementById('supprimer').addEventListener('click', async () => {
 
 //Gestion du bouton retour
 document.getElementById('retour').addEventListener('click', () => {
-    window.location.reload()
+    window.location.reload();
 });
 
 calendar.render();
